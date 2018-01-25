@@ -55,6 +55,10 @@ android-pico is released under the AGPL licence. Read COPYING for information.
 
 There is an older BSD-licenced version of the code available at https://github.com/mypico/android-pico-bsd
 
+## Contributing
+
+We welcome comments and contributions to the project. If you're interested in contributing please see here: https://get.mypico.org/cla/
+
 ## Contact and Links
 
 More information can be found at: http://mypico.org
