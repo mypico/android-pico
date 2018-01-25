@@ -1,0 +1,18 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="restore_backup_task__progress">Restoring backup&#8230;</string>
+    <string name="create_backup_task__backup_notification_title">Pico backup</string>
+    <string name="create_backup_task__backup_notification">Backup in progress&#8230;</string>
+    <string name="create_backup_task__backup_notification_success">Backup successful</string>
+    <string name="create_backup_task__backup_notification_failure">Backup failed</string>
+    <string name="isempty_task__progress">Searching for backups&#8230;</string>
+
+    <!-- Microsoft OneDrive -->
+    <string name="ONEDRIVE_APP_KEY">000000004411FB09</string>
+
+    <!-- Dropbox -->
+    <string name="DROPBOX_APP_KEY">9x2lzwdvq3gf9db</string>
+    <string name="DROPBOX_APP_SECRET">amwr7r0xmtnzqtm</string>
+
+</resources>

@@ -1,0 +1,88 @@
+#
+# generated on 2013/12/19 01:02:33
+#
+# --table-start--
+dataClass=org.mypico.jpico.pairing.Pairing
+tableName=PAIRINGS
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=ID
+generatedId=true
+useGetSet=true
+throwIfNull=true
+# --field-end--
+# --field-start--
+fieldName=name
+columnName=ACCOUNT_NAME
+canBeNull=false
+useGetSet=true
+indexName=PAIRINGS_ACCOUNT_NAME_idx
+# --field-end--
+# --field-start--
+fieldName=service
+columnName=SERVICE_ID
+canBeNull=false
+foreign=true
+useGetSet=true
+foreignAutoRefresh=true
+foreignAutoCreate=true
+# --field-end--
+# --field-start--
+fieldName=privateKey
+columnName=ACCOUNT_PRIV_KEY
+canBeNull=false
+useGetSet=true
+persisterClass=org.mypico.jpico.util.PrivateKeyPersister
+# --field-end--
+# --field-start--
+fieldName=publicKey
+columnName=ACCOUNT_PUB_KEY
+canBeNull=false
+useGetSet=true
+persisterClass=org.mypico.jpico.util.PublicKeyPersister
+# --field-end--
+# --field-start--
+fieldName=date
+columnName=DATE
+canBeNull=false
+useGetSet=true
+unique=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################
+# --table-start--
+dataClass=org.mypico.jpico.service.Service
+tableName=SERVICES
+# --table-fields-start--
+# --field-start--
+fieldName=id
+columnName=ID
+generatedId=true
+useGetSet=true
+throwIfNull=true
+# --field-end--
+# --field-start--
+fieldName=servicePublicKeyCommitment
+columnName=SERVICE_PUB_KEY_COMMIT
+canBeNull=false
+useGetSet=true
+indexName=SERVICES_SERVICE_PUB_KEY_COMMIT_idx
+# --field-end--
+# --field-start--
+fieldName=servicePublicKey
+columnName=SERVICE_PUB_KEY
+canBeNull=false
+useGetSet=true
+persisterClass=org.mypico.jpico.util.PublicKeyPersister
+# --field-end--
+# --field-start--
+fieldName=name
+columnName=SERVICE_NAME
+canBeNull=false
+useGetSet=true
+# --field-end--
+# --table-fields-end--
+# --table-end--
+#################################

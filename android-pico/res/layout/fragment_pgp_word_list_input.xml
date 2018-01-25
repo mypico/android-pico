@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    style="@style/WizardPageContainer"
+    android:animateLayoutChanges="true">
+
+    <TextView style="@style/WizardPageTitle" />
+
+    <TextView
+        android:id="@+id/fragment_pgp_word_list_input__message"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:paddingLeft="@dimen/activity_horizontal_margin"
+        android:paddingRight="@dimen/activity_horizontal_margin"
+        android:paddingTop="@dimen/activity_vertical_margin"
+        android:layout_marginBottom="@dimen/inner_vertical_margin"
+        android:textColor="@color/red"
+        android:text="@string/fragment_pgp_word_list_input__error"
+        android:gravity="center"
+        android:visibility="gone" />
+
+    <GridView
+        android:id="@+id/pgpwordlistGridView"
+        android:numColumns="2"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="0dp"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

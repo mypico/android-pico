@@ -1,0 +1,24 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/action_resume"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_resume"
+        android:icon="@drawable/ic_action_play" />
+
+    <item
+        android:id="@+id/action_pause"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_pause"
+        android:icon="@drawable/ic_action_pause" />
+
+    <item
+        android:id="@+id/action_close"
+        android:orderInCategory="1"
+        android:showAsAction="ifRoom"
+        android:title="@string/action_close"
+        android:icon="@drawable/ic_action_cancel" />
+
+</menu>

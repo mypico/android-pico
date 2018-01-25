@@ -1,0 +1,6 @@
+include ':android-pico'
+include ':submodules:jpico'
+include ':libproj:android-wizardpager'
+include ':libproj:dropbox-android-chooser'
+include ':libproj:live-sdk'
+include ':libproj:live-sdk-sample'

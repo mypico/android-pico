@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+    <string name="fragment_pgp_word_list_input__title">Enter words</string>
+    <string name="fragment_pgp_word_list_typing__field">Your recovery words</string>
+    <string name="fragment_pgp_word_list_input__error">Please correct the words highlighted in red.</string>
+    <string name="fragment_pgp_word_list__numeral_format" formatted="true">%1$d.</string>
+    <item type="id" name="tag_textwatcher" />
+</resources>

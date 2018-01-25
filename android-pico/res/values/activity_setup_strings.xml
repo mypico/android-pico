@@ -1,0 +1,86 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <!-- Setup activity strings -->
+    <string name="activity_setup__title">Pico setup</string>
+    <string name="activity_setup__exit">Exit</string>
+    <string name="activity_setup__exit_cancel">Continue setup</string>
+    <string name="activity_setup__exit_confirm">Exit</string>
+    <string name="activity_setup__configure_backup_failure">Error setting up your chosen backup provider</string>
+    <string name="activity_setup__configure_backup_cancelled">Cancelled configuring your backup provider</string>
+    <string name="activity_setup__query_backup_failure">Failure when querying your backup provider</string>
+    <string name="activity_setup__query_backup_is_empty">No backups to restore</string>
+    <string name="activity_setup__restore_backup_failure">Error restoring the backup</string>
+    <string name="activity_setup__restore_backup_cancelled">User cancelled restoring Pico backup</string>
+    <string name="activity_setup__setup_completed">Use Pico</string>
+    <string name="activity_setup__restore_completed">Restore Pico</string>
+    <string name="activity_setup__exit_message">Pico cannot be safely used until the setup has not been completed. Are you sure you want to exit?</string>
+
+    <!-- Wizard page welcoming the user to Pico -->
+    <string name="activity_setup__welcome__title">Welcome</string>
+    <string name="activity_setup__welcome__pico_text">This wizard will help you set up the Pico app.</string>
+    <string name="activity_setup__new_user__title">New to Pico?</string>
+    <string name="activity_setup__new_user__setup">New user</string>
+    <string name="activity_setup__new_user__returning_user_restore">Returning user (restore backup)</string>
+
+    <!-- Wizard page explaining install of the Pico Lens -->
+    <string name="activity_setup__pico_lens__title">Pico Lens</string>
+    <string name="activity_setup__pico_lens__text">Pico communicates with your computer using the <b>Pico Lens</b>.</string>
+    <string name="activity_setup__pico_lens__install">Installing Pico Lens</string>
+    <string name="activity_setup__pico_lens__install_text">To install the Pico Lens on your computer, visit <b>get.mypico.org</b> and follow the instructions.</string>
+
+    <!-- Wizard page explaining why Pico must only be used with Trusted computers -->
+    <string name="activity_setup__new_user__add_trusted_computer">Trusted computer</string>
+    <string name="activity_setup__trusted_computer__text">Pico only works with computers it trusts.</string>
+    <string name="activity_setup__trusted_computer__adding_title">Add computer</string>
+    <string name="activity_setup__trusted_computer__adding_text">Your Pico user guide describes the process of adding a new trusted computer.</string>
+
+    <!-- Wizard page explaining why Pico must be backed up -->
+    <string name="activity_setup__pico_backup__title">Backup</string>
+    <string name="activity_setup__pico_backup__explanation_text1">Every time you pair the Pico app with a new computer, your encrypted pairings are securely backed up to a cloud provider that you will choose on the next page. This ensures that you can always restore Pico if your phone is lost or stolen.</string>
+    <string name="activity_setup__pico_backup__explanation_text2">The pairings are encrypted with 12 secret words which you will be asked to note down at the end of the setup.</string>
+
+    <!-- Wizard page requesting backup provider to configure -->
+    <string name="activity_setup__backup_to__title">Backup location</string>
+    <!-- The "no backup" option is kept in its own string so that it can easily be obtained for branching in the wizard. Otherwise we have to do `getStringArray(...)[getStringArray(...).length - 1]` which is horrible and makes reordering dangerous. -->
+    <string name="activity_setup__backup_to__none">No backup (not recommended)</string>
+    <string-array name="activity_setup__backup_to__choices">
+        <item>Dropbox</item>
+        <item>Google Drive</item>
+        <item>Microsoft OneDrive</item>
+        <item>Local backup (not recommended)</item>
+        <item>@string/activity_setup__backup_to__none</item>
+    </string-array>
+    <string name="activity_setup__backup_to__none_warning_title">No backup?</string>
+    <string name="activity_setup__backup_to__none_warning_text">If you choose not to back up your Pico pairings, you will not be able to use Pico to log in to your accounts if you lose your phone or delete the Pico app.</string>
+    <string name="activity_setup__backup_to__sdcard_warning_title">Local backup?</string>
+    <string name="activity_setup__backup_to__sdcard_warning_text">If you choose to back up to local storage, you will be able to recover your pairings when you uninstall the Pico app but not if your phone is lost or stolen.</string>
+    <string name="activity_setup__backup_to__warning_continue">Continue</string>
+    <string name="activity_setup__backup_to__warning_cancel">Cancel</string>
+
+    <!-- Wizard page requesting backup provider to restore from -->
+    <string name="activity_setup__restore_from__title">Restore from</string>
+    <string-array name="activity_setup__restore_from__choices">
+        <item>Dropbox</item>
+        <item>Google Drive</item>
+        <item>Microsoft OneDrive</item>
+        <item>Local backup</item>
+    </string-array>
+
+    <!-- Wizard page displaying the restore options  -->
+    <string name="activity_setup__restore_backup__title">Choose backup</string>
+    <string-array name="activity_setup__restore_backup__choices">
+        <item>Most recent (recommended)</item>
+        <item>I\'ll choose</item>
+    </string-array>
+
+    <!-- Wizard page explaining the user secret to restore Pico in event of loss, theft or corruption -->
+    <string name="activity_setup__recovery_words__title">Recovery words</string>
+    <string name="activity_setup__recovery_words__user_secret_text">Below are your 12 secret recovery words. You\'ll need to enter all 12 words if you need to restore a backup. Note them down and store them in a secure place.</string>
+
+    <!-- Wizard page explaining the need to enter the user secret to restore the backup -->
+    <string name="activity_setup__restore_recovery_words__title">Recovery words</string>
+    <string name="activity_setup__restore_recovery_words__text1">On the next page, enter your 12 secret recovery words to restore your Pico app from backup.</string>
+    <string name="activity_setup__restore_recovery_words__text2">To save you some typing, after you type the first letter of a word, an auto-complete list will appear. Just select the word from there and move onto the next one.</string>
+
+</resources>

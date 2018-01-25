@@ -1,0 +1,16 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="default_invalid_code_message">Invalid QR code</string>
+    <string name="invalid_pico_qr_code">This Pico QR code is invalid</string>
+    <string name="not_a_pico_qr_code">This is not a Pico QR code</string>
+    <string name="wrong_qr_type">Pico was expecting %1$s, but this is %2$s</string>
+    <string name="or_2">%1$s or %2$s</string>
+    <string name="or_3">%1$s, %2$s or %3$s</string>
+    <string name="a_terminal_pairing_qr_code">a QR code for adding a computer</string>
+    <string name="a_pairing_qr_code">a QR code for pairing</string>
+    <string name="a_login_qr_code">a QR code for logging in</string>
+    <string name="nothing">Nothing</string>
+    <string name="scan_another">Scan another</string>
+
+</resources>

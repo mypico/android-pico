@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="delegate_allow">Allow someone else to use this</string>
+    <string name="title_activity_delegate">Delegate access</string>
+    <string name="delegate_instructions">Let the person you\'re delegating to scan this code</string>
+    <string name="no_account">No account</string>
+    <string name="delegation_qr_code">Delegation QR code</string>
+    <string name="title_activity_delegate_rules">Delegation restrictions</string>
+    <string name="delegation_successful_fmt">Delegation of %s was successful</string>
+    <string name="delegation_failed_fmt">Login to %s failed</string>
+    <string name="receive_delegated_account">Receiving delegated account details</string>
+
+
+</resources>

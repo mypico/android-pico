@@ -1,0 +1,124 @@
+apply plugin: 'com.android.application'
+
+repositories {
+    jcenter()
+}
+
+dependencies {
+    compile 'com.android.support:support-v4:25.3.1'
+    compile 'com.google.android.gms:play-services-drive:11.0.2'
+    compile 'com.google.zxing:core:3.3.0'
+    compile fileTree(dir: 'libs', include: '*.jar')
+    compile project(':submodules:jpico')
+    compile project(':libproj:android-wizardpager')
+    compile project(':libproj:dropbox-android-chooser')
+    compile project(':libproj:live-sdk')
+    compile project(':libproj:live-sdk-sample')
+}
+
+android {
+    compileSdkVersion 23
+    buildToolsVersion "25.0.2"
+
+    sourceSets {
+        main {
+            manifest.srcFile 'AndroidManifest.xml'
+            java.srcDirs = ['src']
+            resources.srcDirs = ['src']
+            aidl.srcDirs = ['src']
+            renderscript.srcDirs = ['src']
+            res.srcDirs = ['res']
+            assets.srcDirs = ['assets']
+        }
+
+        // Move the tests to tests/java, tests/res, etc...
+        instrumentTest.setRoot('tests')
+
+        // Move the build types to build-types/<type>
+        // For instance, build-types/debug/java, build-types/debug/AndroidManifest.xml, ...
+        // This moves them out of them default location under src/<type>/... which would
+        // conflict with src/ being used by the main source set.
+        // Adding new build types or product flavors should be accompanied
+        // by a similar customization.
+        debug.setRoot('build-types/debug')
+        release.setRoot('build-types/release')
+    }
+
+    // Added because of the following error: Error: duplicate files during packaging of APK 
+    packagingOptions {
+        exclude 'META-INF/LICENSE.txt'
+        exclude 'META-INF/NOTICE.txt'
+    }
+
+    lintOptions {
+        disable 'MissingTranslation', 'ExtraTranslation', 'InvalidPackage'
+    }
+
+    signingConfigs {
+        release {
+            // Execute as so ANDROID_KEYSTORE_PASSWORD="..." ANDROID_KEY_PASSWORD="..." ./gradlew assembleRelease
+            // to avoid annoying password prompts.
+            //storeFile file("../pico.keystore")
+            //storePassword System.getenv("ANDROID_KEYSTORE_PASSWORD") ?: System.console().readLine("\nKeystore password (press RETURN to skip in debug): ")
+            //keyAlias "pico-app"
+            //keyPassword System.getenv("ANDROID_KEY_PASSWORD") ?: System.console().readLine("\nKey password (press RETURN to skip in debug): ")
+        }
+    }
+
+    buildTypes {
+        debug {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+        }
+        release {
+            minifyEnabled true
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-project.txt'
+
+            signingConfig signingConfigs.release
+        }
+    }
+
+    android.applicationVariants.all { variant ->
+
+        task("generate${variant.name}Javadoc", type: Javadoc) {
+            description "Generates Javadoc for $variant.name."
+            source = variant.javaCompile.source
+            ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+            classpath = files(variant.javaCompile.classpath.files) + files(ext.androidJar)
+            destinationDir = file("build/docs/javadoc/")
+            title = rootProject.name
+            options {
+                tags = ["attr"]
+                showFromPublic()
+                stylesheetFile = new File(projectDir, "assets/stylesheet.css");
+            }
+            failOnError true
+        }
+    }
+
+    task("javadoc", type: Javadoc) {
+        description "Generates Javadoc for android-pico."
+        source = android.sourceSets.main.java.srcDirs + project(':submodules:jpico').files()
+        ext.androidJar = "${android.sdkDirectory}/platforms/${android.compileSdkVersion}/android.jar"
+        classpath = project.files(android.getBootClasspath().join(File.pathSeparator)) + files(ext.androidJar) + project(':submodules:jpico').files()
+        destinationDir = file("build/docs/javadoc/")
+        title = rootProject.name
+        options {
+            tags = ["attr"]
+            showFromPublic()
+            stylesheetFile = new File(projectDir, "assets/stylesheet.css");
+        }
+        failOnError false
+    }
+}
+
+def props = new Properties()
+try {
+    props.load(new FileInputStream(rootProject.file("release.properties")))
+    android.signingConfigs.release.storeFile rootProject.file(props.keyStore)
+    android.signingConfigs.release.storePassword props.keyStorePassword
+    android.signingConfigs.release.keyAlias props.keyAlias
+    android.signingConfigs.release.keyPassword props.keyAliasPassword
+} catch (FileNotFoundException e) {
+    System.out.println("release.properties not present, unable to initialise signingConfigs.release")
+}

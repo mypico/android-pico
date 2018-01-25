@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="title_activity_lens_pairing_detail">Pairing details</string>
+    <string name="created_label">Created on</string>
+    <string name="credentials_title">Login details</string>
+    <string name="credentials_switch_off">Hidden</string>
+    <string name="credentials_switch_on">Visible</string>
+
+</resources>

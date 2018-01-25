@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="title_activity_pico_capture">@string/pico</string>
+    <string name="action_control_panel">Control panel</string>
+    <string name="connect_before_scan">Connect to the Internet before scanning</string>
+    <string name="connect_warning">Warning</string>
+
+    <string name="scanner_prompt">Scan a Pico QR code to log in</string>
+
+    <string name="quick_bluetooth_login">Touch to log in to &lt;b&gt;%1$s&lt;/b&gt;</string>
+
+</resources>

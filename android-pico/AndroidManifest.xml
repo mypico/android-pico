@@ -1,0 +1,176 @@
+<?xml version="1.0" encoding="utf-8"?>
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    package="org.mypico.android"
+    android:versionCode="1"
+    android:versionName="1.0">
+
+    <uses-sdk
+        android:minSdkVersion="18"
+        android:targetSdkVersion="19" />
+
+    <uses-permission android:name="android.permission.INTERNET" />
+    <uses-permission android:name="android.permission.CAMERA" />
+    <uses-permission android:name="android.permission.WRITE_EXTERNAL_STORAGE" />
+    <uses-permission android:name="android.permission.BLUETOOTH" />
+    <!-- ACCESS_NETWORK_STATE permission needed to determine whether the phone is connected to a data network -->
+    <uses-permission android:name="android.permission.ACCESS_NETWORK_STATE" />
+    <!-- RECEIVE_BOOT_COMPLETED permission needed to restart background services after reboot -->
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <!-- wake lock is used to turn on screen when Bluetooth authentication is initiated -->
+    <uses-permission android:name="android.permission.WAKE_LOCK" />
+
+    <application
+        android:name="org.mypico.android.core.PicoApplication"
+        android:allowBackup="false"
+        android:icon="@mipmap/ic_launcher_material"
+        android:label="@string/app_name"
+        android:theme="@style/PicoTheme"
+        tools:replace="android:icon">
+        <meta-data
+            android:name="com.google.android.gms.version"
+            android:value="@integer/google_play_services_version" />
+        <meta-data
+            android:name="com.google.android.apps.APP_ID"
+            android:value="id=handy-cache-620" />
+
+        <service
+            android:name="org.mypico.android.core.PicoServiceImpl"
+            android:exported="true"></service>
+        <service
+            android:name="org.mypico.android.pairing.LensPairingIntentService"
+            android:exported="false"></service>
+        <service
+            android:name="org.mypico.android.pairing.KeyPairingIntentService"
+            android:exported="false"></service>
+        <service
+            android:name="org.mypico.android.pairing.PairingsIntentService"
+            android:exported="false"></service>
+        <service
+            android:name="org.mypico.android.pairing.AuthenticateIntentService"
+            android:exported="false"></service>
+
+        <!-- Bluetooth background service -->
+        <service
+            android:name="org.mypico.android.bluetooth.PicoBluetoothService"
+            android:exported="false"
+            android:enabled="true" />
+        <receiver android:name="org.mypico.android.bluetooth.AutoStartServiceReceiver">
+            <intent-filter>
+                <action android:name="android.intent.action.BOOT_COMPLETED" />
+            </intent-filter>
+        </receiver>
+
+        <activity
+            android:name="org.mypico.android.core.SplashScreenActivity"
+            android:launchMode="singleTop"
+            android:theme="@android:style/Theme.Holo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.LAUNCHER" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.mypico.android.core.PicoStatusActivity"
+            android:label="@string/title_activity_pico_status">
+
+            <!-- android:uiOptions="splitActionBarWhenNarrow" -->
+            <intent-filter>
+                <action android:name="none" />
+
+                <category android:name="android.intent.category.MONKEY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.mypico.android.core.AcquireCodeActivity"
+            android:label="@string/pico"
+            android:theme="@android:style/Theme.Holo.NoActionBar">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN" />
+
+                <category android:name="android.intent.category.MONKEY" />
+            </intent-filter>
+        </activity>
+        <activity
+            android:name="org.mypico.android.core.PicoCaptureActivity"
+            android:configChanges="orientation"
+            android:label="@string/title_activity_pico_capture"
+            android:screenOrientation="portrait"
+            android:theme="@style/PicoCaptureActivityTheme">
+
+            <!--
+            	screenOrientation and configChanges attributes make it so the view is fixed in a
+            	portrait orientation and doesn't get redrawn (slow) when the user rotates their
+            	device.
+            -->
+        </activity>
+        <activity
+            android:name="org.mypico.android.pairing.NewKeyPairingActivity"
+            android:label="@string/title_activity_new_pairing"></activity>
+        <activity
+            android:name="org.mypico.android.pairing.NewLensPairingActivity"
+            android:label="@string/title_activity_new_pairing"></activity>
+        <activity
+            android:name="org.mypico.android.pairing.ChooseKeyPairingActivity"
+            android:label="@string/title_activity_choose_pairing"></activity>
+        <activity
+            android:name="org.mypico.android.pairing.AuthenticateActivity"
+            android:label="@string/title_activity_authenticate"
+            android:screenOrientation="locked"></activity>
+        <activity
+            android:name="org.mypico.android.pairing.LensPairingDetailActivity"
+            android:label="@string/title_activity_lens_pairing_detail"></activity>
+        <activity
+            android:name="org.mypico.android.setup.SetupActivity"
+            android:label="@string/activity_setup__title"
+            android:screenOrientation="locked"
+            android:theme="@android:style/Theme.Holo.NoActionBar"></activity>
+        <activity
+            android:name="org.mypico.android.setup.RestoreBackupActivity"
+            android:label="@string/activity_setup__title"
+            android:screenOrientation="locked"
+            android:theme="@android:style/Theme.Holo.NoActionBar"></activity>
+        <activity
+            android:name="org.mypico.android.core.SettingsActivity"
+            android:label="@string/activity_settings_title"></activity>
+
+
+        <!-- Third party components -->
+
+        <activity
+            android:name="com.dropbox.client2.android.AuthActivity"
+            android:configChanges="orientation|keyboard"
+            android:launchMode="singleTask">
+            <intent-filter>
+
+                <!-- Change this to be db- followed by your app key -->
+                <data android:scheme="db-9x2lzwdvq3gf9db" />
+
+                <action android:name="android.intent.action.VIEW" />
+
+                <category android:name="android.intent.category.BROWSABLE" />
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name="com.microsoft.live.sample.skydrive.SkyDriveActivity"></activity>
+        <activity
+            android:name="org.mypico.android.delegate.DelegateActivity"
+            android:label="@string/title_activity_delegate"></activity>
+        <activity
+            android:name="org.mypico.android.delegate.RulesActivity"
+            android:label="@string/title_activity_delegate_rules" />
+        <activity
+            android:name="org.mypico.android.delegate.NewDelegatePairingActivity"
+            android:label="@string/title_activity_delegate" />
+
+        <service
+            android:name="org.mypico.android.delegate.DelegatePairingIntentService"
+            android:exported="false" />
+
+        <activity
+            android:name="org.mypico.android.backup.ManageBackupActivity"
+            android:label="@string/title_activity_manage_backup"></activity>
+    </application>
+
+</manifest>

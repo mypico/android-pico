@@ -1,0 +1,3 @@
+[submodule "submodules/jpico"]
+	path = submodules/jpico
+	url = git@github.com:mypico/jpico.git

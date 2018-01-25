@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="title_activity_new_pairing">New pairing</string>
+    <string name="fragment_service__logo_desc">The service\'s logo</string>
+    <string name="activity_new_pairing__confirm_button">Confirm</string>
+    <string name="activity_new_pairing__cancel_button">Cancel</string>
+    <string name="activity_new_pairing__text2">Pairing name:</string>
+    <string name="default_pairing_name">Default account</string>
+    <string-array name="pairing_category_names">
+        <item>Main</item>
+        <item>Home</item>
+        <item>Work</item>
+    </string-array>
+
+    <!-- Lens pairing auth failed dialog -->
+    <string name="show_saved_credentials">Show login details</string>
+
+</resources>

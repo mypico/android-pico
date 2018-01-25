@@ -1,0 +1,12 @@
+<resources>
+    <string name="title_activity_manage_backup">Manage backup</string>
+    <string name="manage_backup_information_text">Backup location: %1$s \r\nLast backup: %2$s \r\nLast change: %3$s</string>
+    <string name="manage_backup_perform_now">Back up now</string>
+    <string name="manage_backup_show_recovery_words">Show backup recovery words</string>
+    <string name="manage_backup_recover_backup">Restore old backup</string>
+    <string name="manage_backup_performing_toast">Backing up</string>
+    <string name="manage_backup_error_performing_toast">Backup failed</string>
+    <string name="manage_backup_all_backed_up">All backed up</string>
+    <string name="manage_backup_backup_needed">Backup out of date</string>
+    <string name="manage_backup_nothing_to_backup">Nothing to back up</string>
+</resources>

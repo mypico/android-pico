@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:layout_marginLeft="@dimen/activity_horizontal_margin"
+    android:layout_marginRight="@dimen/activity_horizontal_margin"
+    android:layout_marginTop="@dimen/activity_vertical_margin"
+    android:layout_marginBottom="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    android:id="@+id/noconnection"
+    android:gravity="center_vertical">
+
+    <ImageView
+        android:id="@+id/noconnectionimage"
+        android:layout_width="match_parent"
+        android:layout_height="128dp"
+        android:baselineAlignBottom="false"
+        android:clickable="true"
+        android:contentDescription="@string/connect_warning"
+        android:src="@drawable/warning" />
+
+    <TextView
+        android:id="@+id/noconnectiontext"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="@dimen/activity_vertical_margin"
+        android:gravity="center"
+        android:text="@string/connect_before_scan"
+        android:textSize="18sp"
+        android:textColor="@color/whiteText"
+        android:shadowColor="#8000"
+        android:shadowRadius="4"
+        android:shadowDy="1" />
+
+</LinearLayout>

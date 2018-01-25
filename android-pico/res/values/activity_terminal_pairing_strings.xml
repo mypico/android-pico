@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="dialog_terminal_pairing__title">Add trusted browser?</string>
+    <string name="dialog_terminal_pairing__message">Do you want your Pico to trust the computer %s?</string>
+    <string name="dialog_terminal_pairing__positive">@string/yes</string>
+    <string name="dialog_terminal_pairing__negative">@string/no</string>
+    <string name="no_terminals">On your computer, click the Pico icon in your browser and \'Pair computer with Pico\'.\n\nThen click the \'+\' button here to scan the barcode.\n</string>
+    <string name="action_new_terminal">Pair with browser</string>
+    <string name="terminal_added">New trusted browser saved.</string>
+    <string name="terminal_not_added">Unable to save new trusted browser.</string>
+    <string name="action_delete_terminal">Remove browser pairing</string>
+    <plurals name="terminals_deleted">
+        <item quantity="one">Browser pairings removed</item>
+        <item quantity="other">%d browser pairings removed</item>
+    </plurals>
+    <plurals name="terminals_not_deleted">
+        <item quantity="one">Browser pairing could not be removed</item>
+        <item quantity="other">%d browser pairings could not be removed</item>
+    </plurals>
+    <string name="some_terminals_deleted">Some browser pairings could not be removed</string>
+
+    <string name="terminal_added_successfully">Successfully added trusted browser</string>
+    <string name="failure_adding_terminal">Failed adding trusted browser</string>
+    <string name="failure_deleting_terminal">Failed deleting trusted browser</string>
+
+    <!-- Delete terminal dialog -->
+    <string name="delete_terminal_dialog__title_1">Remove browser pairing?</string>
+    <string name="delete_terminal_dialog__title_multi">Remove browser pairings?</string>
+    <string name="delete_terminal_dialog__message_1">Are you sure you want to remove the browser pairing with \'%s\'?</string>
+    <string name="delete_terminal_dialog__message_multi">Are you sure you want to remove these %d browser pairings?</string>
+    <string name="delete_terminal_dialog__positive">@string/yes</string>
+    <string name="delete_terminal_dialog__negative">@string/no</string>
+
+    <!--  Progress dialog -->
+    <string name="add_terminal__progress">Adding new trusted browser&#8230;</string>
+    <string name="delete_terminal__progress">Removing trusted browser&#8230;</string>
+
+</resources>

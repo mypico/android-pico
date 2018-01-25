@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="title_activity_authenticate">@string/pico</string>
+    <string name="auth_failed">Login failed</string>
+    <string name="authenticating_to_fmt">Logging in to %s…</string>
+    <string name="auth_successful_fmt">Login to %s was successful</string>
+    <string name="auth_failed_fmt">Login to %1$s failed</string>
+    <string name="auth_failed_fmt2">Login to %1$s failed. %2$s</string>
+    <string name="service_unknown">Unknown service</string>
+    <string name="io_error_message">Login failed because of connectivity problems. Please check your connection.</string>
+    <string name="timeout_error_message">The connection timed out. Try refreshing the login screen.</string>
+    <string name="auth_failure_details">Something went wrong!\nTechnical details: %2$s (%1$s)</string>
+    <string name="auth_failure_details_short">Something went wrong!\nTechnical details: %1$s</string>
+    <string name="user_feedback_protocol_violation">Your version of Pico is incompatible with the service. Make sure all your Pico software is up to date.</string>
+    <string name="user_feedback_verifier_auth_failed">The service failed to prove its identity, and may not be genuine.</string>
+    <string name="user_feedback_prover_auth_failed">The service rejected Pico\'s attempt to authenticate you. Try again, and if the problem persists you may need to pair again.</string>
+    <string name="user_feedback_bt_reflection_exceptions">Your phone doesn\'t support some Bluetooth features used by Pico. Untick \"Use Bluetooth\" on your computer to log in over the Internet instead.</string>
+    <string name="user_feedback_bad_rendezvous_url">The service is not using a valid rendezvous server. This may be a configuration problem; contact the service administrator.</string>
+
+    <string name="pairing_failed">Pairing failed</string>
+    <string name="pairing_with_fmt">Pairing with %s…</string>
+    <string name="pairing_successful_fmt">Successfully paired with %s</string>
+    <string name="pairing_failed_fmt">Pairing with %1$s failed</string>
+    <string name="pairing_failed_fmt2">Pairing with %1$s failed. %2$s</string>
+
+    <string name="auth_progress__starting">Starting authentication process…</string>
+    <string-array name="auth_progress__stages">
+        <item>Contacting computer…</item>
+        <item>Deriving keys…</item>
+        <item>Authenticating computer…</item>
+        <item>Authenticating you…</item>
+        <item>Finalised.</item>
+    </string-array>
+
+</resources>

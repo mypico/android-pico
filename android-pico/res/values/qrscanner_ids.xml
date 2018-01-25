@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <!-- Messages for the ScannerHandler -->
+    <item type="id" name="handleFrame" />
+    <item type="id" name="quit" />
+    <!-- Messages for the ResultHandler -->
+    <item type="id" name="previewStarted" />
+    <item type="id" name="codeFound" />
+    <item type="id" name="codeNotFound" />
+</resources>

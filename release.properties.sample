@@ -1,0 +1,4 @@
+keyStore=sampleKeyStore
+keyStorePassword=sampleKeyStorePassword
+keyAlias=sampleKeyAlias
+keyAliasPassword=sampleKeyAliasPassword

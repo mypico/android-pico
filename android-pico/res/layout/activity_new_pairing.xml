@@ -1,0 +1,77 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/new_pairing_activity__layout"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    tools:context=".NewPairingActivity">
+
+    <TextView
+        android:id="@+id/new_pairing_activity__text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <fragment
+        android:id="@+id/activity_new_pairing__service_fragment"
+        android:name="org.mypico.android.pairing.ServiceFragment"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_pairing_activity__text1"
+        android:layout_marginTop="@dimen/inner_vertical_margin"
+        android:layout_marginBottom="@dimen/inner_vertical_margin" />
+
+    <TextView
+        android:id="@+id/activity_new_pairing__existing_pairings"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerHorizontal="true"
+        android:text="" />
+
+    <TextView
+        android:id="@+id/new_pairing_activity__text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/activity_new_pairing__service_fragment"
+        android:layout_marginTop="@dimen/inner_vertical_margin"
+        android:text="@string/activity_new_pairing__text2"
+        android:textAppearance="?android:attr/textAppearanceMedium" />
+
+    <AutoCompleteTextView
+        android:id="@+id/new_pairing_activity__new_pairing_name"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_pairing_activity__text2"
+        android:layout_marginBottom="@dimen/inner_vertical_margin"
+        android:ems="10"
+        android:hint="@string/default_pairing_name"
+        android:inputType="textCapWords">
+
+        <requestFocus />
+    </AutoCompleteTextView>
+
+    <Button
+        android:id="@+id/new_pairing_activity__confirm_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_below="@id/new_pairing_activity__new_pairing_name"
+        android:onClick="confirmNewPairing"
+        android:text="@string/activity_new_pairing__confirm_button" />
+
+    <Button
+        android:id="@+id/new_pairing_activity__cancel_button"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@id/new_pairing_activity__new_pairing_name"
+        android:layout_toLeftOf="@+id/new_pairing_activity__confirm_button"
+        android:layout_toStartOf="@+id/new_pairing_activity__confirm_button"
+        android:onClick="cancelNewPairing"
+        android:text="@string/activity_new_pairing__cancel_button" />
+
+</RelativeLayout>

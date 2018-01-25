@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="activity_new_key_pairing__text1">Do you want to use Pico to log into your %s account?</string>
+    <string name="key_pairing_failed">Failed to pair with %s</string>
+
+</resources>

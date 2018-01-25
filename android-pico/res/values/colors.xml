@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <color name="step_pager_previous_tab_color">#4433b5e5</color>
+    <color name="step_pager_selected_tab_color">#ff0099cc</color>
+    <color name="step_pager_selected_last_tab_color">#ff669900</color>
+    <color name="step_pager_next_tab_color">#4433b5e5</color>
+
+    <color name="review_green">#ff669900</color>
+
+    <color name="text_light">#ff669900</color>
+
+    <color name="pico_orange">#f07816</color>
+    <color name="success_green">#29890c</color>
+    <color name="failure_red">#c10e0e</color>
+
+    <color name="splash_secondary_text">#80ffffff</color>
+
+    <color name="bluetooth_login_background">#40000000</color>
+
+</resources>

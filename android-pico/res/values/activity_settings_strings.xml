@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="activity_settings_title">Settings</string>
+
+    <string name="pref_category_general">General</string>
+    <string name="pref_category_about">About</string>
+
+    <string name="pref_title_bluetooth_mode">Bluetooth mode</string>
+    <string-array name="pref_bluetooth_mode_list_titles">
+        <item>Automatic</item>
+        <item>Manual with notification</item>
+        <item>Manual (touch to log in)</item>
+    </string-array>
+    <!-- IF YOU CAHNGE THESE VALUES, BE SURE TO ALSO UPDATE THE CONSTANTS IN BluetoothMode -->
+    <string-array name="pref_bluetooth_mode_list_values">
+        <item>always_on</item>
+        <item>notification</item>
+        <item>one_shot</item>
+    </string-array>
+    <string name="pref_bluetooth_mode_default_value">notification</string>
+
+    <string name="pref_title_backup">@string/title_activity_manage_backup</string>
+
+    <string name="pref_title_website">Website</string>
+    <string name="pref_title_version">Version</string>
+
+</resources>

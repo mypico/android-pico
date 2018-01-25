@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="pico">Pico</string>
+    <string name="app_name">@string/pico</string>
+
+    <string name="ok">OK</string>
+    <string name="yes">Yes</string>
+    <string name="no">No</string>
+    <string name="help">Help</string>
+    <string name="unknown_service_name">Unknown service</string>
+    <string name="unknown_service_host">Unknown service address</string>
+
+    <!--  Menu items  -->
+    <string name="action_settings">Settings</string>
+    <string name="action_scan">Scan QR code</string>
+    <string name="action_restore_backup">Restore backup</string>
+    <string name="action_display_user_secret">Recovery words</string>
+    <string name="action_help">@string/help</string>
+    <string name="action_auth_button">Authenticate</string>
+    <string name="action_delete">Delete</string>
+
+    <!-- Delegation -->
+    <string name="delegation_failed">Unable to log in</string>
+    <string name="delegation_failed_transcribe">Unable to log in automatically, but you can still log in by going to</string>
+
+    <!--  URL of Pico website -->
+    <string name="pico_project_url">mypico.org</string>
+    <string name="pico_project_url_full">https://mypico.org/</string>
+
+    <string name="list_session_info__status_active_desc">Session active</string>
+    <string name="list_session_info__status_paused_desc">Session paused</string>
+    <string name="list_session_info__status_closed_desc">Session closed</string>
+    <string name="list_session_info__status_error_desc">Session has an error</string>
+
+    <!-- Bluetooth notifications -->
+    <string name="bluetooth_notification__log_in__title">Touch to log in with Pico</string>
+    <string name="bluetooth_notification__log_in__text">Authenticating to %1$s</string>
+    <plurals name="bluetooth_notification__current_sessions">
+        <item quantity="one">Pico is running 1 continuous session</item>
+        <item quantity="other">Pico is running %d continuous sessions</item>
+    </plurals>
+    <string name="bluetooth_notification_service_running">Pico Bluetooth service is running...</string>
+
+
+</resources>

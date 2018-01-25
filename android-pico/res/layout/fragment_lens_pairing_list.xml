@@ -1,0 +1,46 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:paddingBottom="@dimen/activity_vertical_margin"
+    android:paddingLeft="@dimen/activity_horizontal_margin"
+    android:paddingRight="@dimen/activity_horizontal_margin"
+    android:paddingTop="@dimen/activity_vertical_margin"
+    android:orientation="vertical"
+    tools:context=".ChoosePairingActivity">
+
+    <TextView
+        android:id="@+id/fragment_lens_pairing_list__text1"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentTop="true"
+        android:layout_toLeftOf="@+id/fragment_lens_pairing_list__logo"
+        android:paddingRight="8dp"
+        android:textAppearance="?android:attr/textAppearanceLarge" />
+
+    <TextView
+        android:id="@+id/fragment_lens_pairing_list__text2"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_lens_pairing_list__text1"
+        android:layout_toLeftOf="@+id/fragment_lens_pairing_list__logo"
+        android:paddingRight="8dp" />
+
+    <ImageView
+        android:id="@+id/fragment_lens_pairing_list__logo"
+        android:layout_width="72dp"
+        android:layout_height="72dp"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/fragment_lens_pairing_list__text1"
+        android:contentDescription="@string/fragment_service__logo_desc"
+        android:padding="8dp"
+        android:scaleType="fitCenter" />
+
+    <ListView
+        android:id="@id/android:list"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/fragment_lens_pairing_list__text2"
+        android:layout_alignParentRight="true"></ListView>
+
+</RelativeLayout>

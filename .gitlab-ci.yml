@@ -1,0 +1,41 @@
+before_script:
+    #Install ssh-agent if not already installed, it is required by Docker.
+    # (change apt-get to yum if you use a CentOS-based image)
+    - 'which ssh-agent || ( apt-get update -y && apt-get install openssh-client -y )'
+
+    # Run ssh-agent (inside the build environment)
+    - eval $(ssh-agent -s)
+
+    # Add the SSH key stored in SSH_PRIVATE_KEY variable to the agent store
+    - ssh-add <(echo "$SSH_PRIVATE_KEY")
+
+    # For Docker builds disable host key checking. Be aware that by adding that
+    # you are suspectible to man-in-the-middle attacks.
+    # WARNING: Use this only with the Docker executor, if you use it with shell
+    # you will overwrite your user's SSH config.
+    - mkdir -p ~/.ssh
+    - '[[ -f /.dockerenv ]] && echo -e "Host *\n\tStrictHostKeyChecking no\n\n" > ~/.ssh/config'
+
+    - apt-get --quiet update --yes
+    - apt-get --quiet install --yes wget tar unzip openjdk-8-jdk ant lib32stdc++6 lib32z1 git
+    - wget --quiet --output-document=android-sdk.tgz https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+    - tar --extract --gzip --file=android-sdk.tgz
+    - echo y | android-sdk-linux/tools/android --silent update sdk --no-ui --all --filter platform-tools,tools,build-tools-25.0.2,android-23,extra-android-m2repository,extra-google-m2repository
+    - export ANDROID_HOME=$PWD/android-sdk-linux
+
+build:
+    script:
+        - git submodule init
+        - git submodule update
+        - export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+        - ./gradlew assembleDebug 
+        - ./gradlew javadoc
+        - mkdir docs
+        - mv android-pico/build/docs/javadoc ./docs/android-pico
+        - mv submodules/jpico/build/docs/javadoc ./docs/jpico
+    artifacts:
+        paths:
+            - android-pico/build/outputs/apk/android-pico-debug.apk
+            - docs
+    tags:
+        - linux

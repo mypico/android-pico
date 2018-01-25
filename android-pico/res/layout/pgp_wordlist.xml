@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:id="@+id/edit_name"
+    android:layout_width="wrap_content"
+    android:layout_height="wrap_content"
+    android:layout_gravity="center"
+    android:orientation="vertical">
+
+    <!--  Note without columnWidth set numColums="auto_fit" defaults to 2. -->
+    <!-- Note further that this does not always seem to be the case, so set it explicitly. -->
+    <GridView
+        android:id="@+id/pgpwordlistGridView"
+        android:columnWidth="120dp"
+        android:numColumns="2"
+        android:gravity="center"
+        android:stretchMode="columnWidth"
+        android:horizontalSpacing="0dip"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent" />
+
+</LinearLayout>

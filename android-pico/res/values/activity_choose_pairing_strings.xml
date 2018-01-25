@@ -1,0 +1,8 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <string name="title_activity_choose_pairing">Select pairing</string>
+    <string name="no_pairings_with">You haven\'t paired your Pico with %s yet.</string>
+    <string name="this_service">this service</string>
+
+</resources>
