@@ -27,7 +27,7 @@ If you want to build from the command line, you'll need the JDK and ant to build
 openjdk-8-jdk
 ant
 lib32stdc++6
-lib32z1 git
+lib32z1
 ```
 
 You'll also need the Android SDK. You can download this using the following commands (you'll need to accept the Android SDK licence agreement during this process).
