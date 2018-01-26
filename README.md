@@ -12,6 +12,7 @@ https://docs.mypico.org/developer/android-pico/
 
 ## Install
 
+Start by ensuring you've downloaded the latest version from the git repository and are inside the project folder.
 ```
 git clone git@github.com:mypico/android-pico.git
 cd android-pico
