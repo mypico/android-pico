@@ -51,6 +51,11 @@ You can then build like this.
 
 This will leave an apk at `android-pico/android-pico/build/outputs/apk/android-pico-debug.apk` and documentation files in the `android-pico/android-pico/build/docs` folder.
 
+If you have a developer-enabled Android phone attached to your computer via USB you can install the app with the following.
+```
+adb -d install android-pico/build/outputs/apk/android-pico-debug.apk
+```
+
 ## License
 
 android-pico is released under the AGPL licence. Read COPYING for information.
