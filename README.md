@@ -49,7 +49,7 @@ You can then build like this.
 ./gradlew javadoc
 ```
 
-This will leave an apk at `android-pico/android-pico/build/outputs/apk/android-pico-debug.apk` and documentation files in the `docs` folder.
+This will leave an apk at `android-pico/android-pico/build/outputs/apk/android-pico-debug.apk` and documentation files in the `android-pico/android-pico/build/docs` folder.
 
 ## License
 
