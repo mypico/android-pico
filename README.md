@@ -55,6 +55,11 @@ If you have a developer-enabled Android phone attached to your computer via USB 
 ```
 adb -d install android-pico/build/outputs/apk/android-pico-debug.apk
 ```
+This will only work if you have developer permission to access your phone. To check, the following command should list sensible info about your device.
+```
+adb devices -l
+```
+If not, check out the details on the [Android developer site](https://developer.android.com/studio/command-line/adb.html).
 
 ## License
 
