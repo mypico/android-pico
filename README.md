@@ -12,6 +12,11 @@ https://docs.mypico.org/developer/android-pico/
 
 ## Install
 
+```
+git clone git@github.com:mypico/android-pico.git
+cd android-pico
+```
+
 The Pico java library jpico is needed, but has been included as a submodule. You can set it up by running the following commands inside the root android-pico folder.
 
 ```
@@ -21,16 +26,13 @@ git submodule update
 
 The easiest way to then build android-pico is using Android Studio, by importing the gradle scripts.
 
-If you want to build from the command line, you'll need the JDK and ant to build the code. On Linux, make sure you have the following installed:
+If you want to build from the command line, you'll need the JDK and ant to build the code. On Ubuntu, you can install what you need using the following commands:
 
 ```
-openjdk-8-jdk
-ant
-lib32stdc++6
-lib32z1
+sudo apt install openjdk-8-jdk ant lib32stdc++6 lib32z1
 ```
 
-You'll also need the Android SDK. You can download this using the following commands (you'll need to accept the Android SDK licence agreement during this process).
+You'll also need the Android SDK. You can download this using the following commands (you'll need to accept the Android SDK licence agreement during this process). Again, do this inside the root android-pico folder.
 
 ```
 wget --output-document=android-sdk.tgz https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
