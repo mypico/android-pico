@@ -52,15 +52,18 @@ You can then build like this.
 
 This will leave an apk at `android-pico/android-pico/build/outputs/apk/android-pico-debug.apk` and documentation files in the `android-pico/android-pico/build/docs` folder.
 
-If you have a developer-enabled Android phone attached to your computer via USB you can install the app with the following.
-```
-adb -d install android-pico/build/outputs/apk/android-pico-debug.apk
-```
-This will only work if you have developer permission to access your phone. To check, the following command should list sensible info about your device.
+The easiest way to install the app is to deploy it to your phone via USB. To check whether your phone is developer-enabled and correctly connected, enter the following. 
+
 ```
 adb devices -l
 ```
-If not, check out the details on the [Android developer site](https://developer.android.com/studio/command-line/adb.html).
+
+If you don't see your device showing correctly in this list, you'll need to fix this first. In this case check out the details on the [Android developer site](https://developer.android.com/studio/command-line/adb.html).
+
+Once your developer-enabled Android phone is correctly connected to your computer via USB you can install the app with the following.
+```
+adb -d install android-pico/build/outputs/apk/android-pico-debug.apk
+```
 
 ## License
 
