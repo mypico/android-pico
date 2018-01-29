@@ -1,0 +1,89 @@
+<html>
+<body>
+<b>Android-Pico</b> is the Pico Android App, used for authenticating to Pico-enabled services.
+
+<style>
+.fragment {
+	border: 1px solid grey;
+	padding: 4px;
+}
+</style>
+
+<p /><h2>Summary</h2>
+
+<p />This manual documents the android-pico internal classes and methods. The android-pico app runs on Android and allows users to authenticate to Pico-enabled services. This documentation provides technical details of all the code used by the app. It's unlikely to be very useful for end users though.
+
+<p /><h2>Documentation structure</h2>
+
+<p />The android-pico code is split into Java packages, each of which encapsulates a particular type of functionality. Each package has the prefix <code>org.mypico.android</code>.
+
+<p />Inside each package you'll find different classes, each implementing more specific functionality. Click on one of the package names above or in the side-panel to find out more about it.
+
+<p /><h2>Android installation</h2>
+
+<p />The easiest way to install Pico on your Android device is to install it directly from the Google Play Store. Unfortunately it's not yet available this way, but once it is, searching for <b>android-pico</b> should find the app so you can install it this way.
+
+<p /><h2>Building from source on Linux</h2>
+
+<p />You can build android-pico on Windows, Linux, or any other platform supported by the Android SDK. Here we give details for how to build it on a Linux machine; building on Windows should be similar.
+
+<p />You'll need to install <code>git</code>, <code>wget</code>, <code>adb</code>, <code>ant</code> and the JDK in order for these instructions to work. On Ubuntu 16.04, you can get these all in one go using the following command.
+
+<pre class="fragment">
+sudo apt install git wget android-tools-adb openjdk-8-jdk ant lib32stdc++6 lib32z1
+</pre>
+
+<p />Now ensure you've downloaded the latest version of the code from the git repository and are inside the project folder.
+
+<pre class="fragment">
+git clone git@github.com:mypico/android-pico.git
+cd android-pico
+</pre>
+
+<p />The Pico java library jpico is needed, but has been included as a submodule. You can set it up by running the following commands inside the root android-pico folder.
+
+<pre class="fragment">
+git submodule init
+git submodule update
+</pre>
+
+<p />The easiest way to then build android-pico is using Android Studio, by importing the gradle scripts.
+
+<p />You'll also need the Android SDK. You can download this using the following commands (you'll need to accept the Android SDK licence agreement during this process). Again, do this inside the root android-pico folder.
+
+<pre class="fragment">
+wget --output-document=android-sdk.tgz https://dl.google.com/android/android-sdk_r24.4.1-linux.tgz
+tar --extract --gzip --file=android-sdk.tgz
+android-sdk-linux/tools/android update sdk --no-ui --all --filter platform-tools,tools,build-tools-25.0.2,android-23,extra-android-m2repository,extra-google-m2repository
+export ANDROID_HOME=$PWD/android-sdk-linux 
+export JAVA_TOOL_OPTIONS=-Dfile.encoding=UTF8
+</pre>
+
+You can then build like this.
+
+<pre class="fragment">
+./gradlew assembleDebug
+./gradlew javadoc
+</pre>
+
+This will leave an apk at <code>android-pico/android-pico/build/outputs/apk/android-pico-debug.apk</code> and documentation files in the <code>android-pico/android-pico/build/docs folder</code>.
+
+<p /><h2>Deploying the app to an Android device</h2>
+
+The easiest way to install the package you've just built is to deploy it to your phone via USB. To check whether your phone is developer-enabled and correctly connected, enter the following.
+
+<pre class="fragment">
+adb devices -l
+</pre>
+
+If you don't see your device showing correctly in this list, you'll need to fix this first. In this case check out the details on the Android developer site.
+
+Once your developer-enabled Android phone is correctly connected to your computer via USB you can install the app with the following.
+
+<pre class="fragment">
+adb -d install android-pico/build/outputs/apk/android-pico-debug.apk
+</pre>
+
+</body>
+</html>
+
