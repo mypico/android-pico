@@ -17,7 +17,7 @@
 
 <p />The android-pico code is split into Java packages, each of which encapsulates a particular type of functionality. Each package has the prefix <code>org.mypico.android</code>.
 
-<p />Inside each package you'll find different classes, each implementing more specific functionality. Click on one of the package names above or in the side-panel to find out more about it.
+<p />Inside each package you'll find different classes, each implementing more specific functionality. Click on one of the package names above or in the side-panel to filter its contents. Then click on one of the interfaces, exceptions, classes, etc. in the side-panel below it to find out more about it.
 
 <p /><h2>Android installation</h2>
 
@@ -27,10 +27,19 @@
 
 <p />You can build android-pico on Windows, Linux, or any other platform supported by the Android SDK. Here we give details for how to build it on a Linux machine; building on Windows should be similar.
 
-<p />You'll need to install <code>git</code>, <code>wget</code>, <code>adb</code>, <code>ant</code> and the JDK in order for these instructions to work. On Ubuntu 16.04, you can get these all in one go using the following command.
+<p />In order for these instructions to work you'll need to install the JDK and a few other dependencies:
+
+<ul>
+<li />git
+<li />ant
+<li />wget
+<li />adb
+</ul
+
+On Ubuntu 16.04, you can get these all in one go using the following command.
 
 <pre class="fragment">
-sudo apt install git wget android-tools-adb openjdk-8-jdk ant lib32stdc++6 lib32z1
+sudo apt install openjdk-8-jdk git ant wget android-tools-adb lib32stdc++6 lib32z1
 </pre>
 
 <p />Now ensure you've downloaded the latest version of the code from the git repository and are inside the project folder.
