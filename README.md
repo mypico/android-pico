@@ -10,6 +10,10 @@ For details on the internal classes and structure of the code, see:
 
 https://docs.mypico.org/developer/android-pico/
 
+If you want to build all the Pico components from source in one go, without having to worry about the details, see:
+
+https://github.com/mypico/pico-build-all
+
 ## Install
 
 Start by ensuring you've downloaded the latest version from the git repository and are inside the project folder.
