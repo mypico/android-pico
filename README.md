@@ -14,7 +14,7 @@ If you want to build all the Pico components from source in one go, without havi
 
 https://github.com/mypico/pico-build-all
 
-## Install
+## Build
 
 Start by ensuring you've downloaded the latest version from the git repository and are inside the project folder.
 ```
@@ -56,7 +56,9 @@ You can then build like this.
 
 This will leave an apk at `android-pico/android-pico/build/outputs/apk/android-pico-debug.apk` and documentation files in the `android-pico/android-pico/build/docs` folder.
 
-The easiest way to install the app is to deploy it to your phone via USB. To check whether your phone is developer-enabled and correctly connected, enter the following. 
+## Install
+
+The easiest way to install the app is to deploy it to your phone via USB. Ensure your phone has [developer debugging](https://www.kingoapp.com/root-tutorials/how-to-enable-usb-debugging-mode-on-android.htm) enabled and connect it via USB to your computer. To check whether your phone is developer-enabled and correctly connected, enter the following on the computer it's connected to. 
 
 ```
 adb devices -l
@@ -68,6 +70,8 @@ Once your developer-enabled Android phone is correctly connected to your compute
 ```
 adb -d install android-pico/build/outputs/apk/android-pico-debug.apk
 ```
+
+In case this fails, it could be because you've got an old version of Pico already installed. Uninstall it from your phone first, then try again.
 
 ## License
 
